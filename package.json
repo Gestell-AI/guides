@@ -1,0 +1,17 @@
+{
+  "name": "@gestell/guides",
+  "type": "module",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.14"
+  },
+  "peerDependencies": {
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@gestell/sdk": "^1.1.21",
+    "colors": "^1.4.0"
+  }
+}
