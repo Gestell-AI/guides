@@ -20,6 +20,8 @@ Add a `.env` file for convenience or add `GESTELL_API_KEY` to your terminal sess
 
 ```bash
 export GESTELL_API_KEY="..."
+# Also add your organization id
+export ORGANIZATION_ID="..."
 ```
 
 ## Node SDK
@@ -43,10 +45,11 @@ node src/node/features.js
 
 ## Python SDK
 
-You can run `uv install` in this repo and be able to run via `python 3.X`:
+You can run `uv venv` and then `uv sync` in this repo and be able to run via `python 3.X`:
 
 ```bash
 uv venv
+uv sync
 source .venv/bin/activate
 # If needed `uv pip install gestell`
 

@@ -3,15 +3,13 @@ import { join } from "node:path";
 import { Gestell } from "@gestell/sdk";
 
 const gestell = new Gestell();
+const organizationId = process.env.ORGANIZATION_ID || "";
+
+if (!organizationId) {
+  throw new Error("Please provide an organization id for setup");
+}
 
 async function start() {
-  // Create a test organization
-  const { id: organizationId } = await gestell.organization.create({
-    name: "Test Organization",
-    description: "Test Organization",
-  });
-  console.log("Created new test organization".green.bold, organizationId);
-
   // Create a test collection
   const { id: collectionId } = await gestell.collection.create({
     organizationId,

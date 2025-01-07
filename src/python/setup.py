@@ -3,17 +3,12 @@ import os
 from gestell import Gestell
 
 gestell = Gestell()
+organization_id = os.getenv("ORGANIZATION_ID")
+if not organization_id:
+    raise ValueError("ORGANIZATION_ID environment variable is not set")
 
 
 async def start():
-    # Create a test organization
-    organization = await gestell.organization.create(
-        name="Test Organization",
-        description="Test Organization",
-    )
-    organization_id = organization.id
-    print("\033[92m\033[1mCreated new test organization\033[0m", organization_id)
-
     # Create a test collection
     collection = await gestell.collection.create(
         organization_id=organization_id,
